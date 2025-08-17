@@ -1,0 +1,11 @@
+checkpatch reports several false positives that are intentionally
+ignored:
+
+- COMPLEX_MACRO/MACRO_ARG_REUSE for tm16xx_for_each_key(): This is a
+  standard iterator pattern following kernel conventions (similar to
+  for_each_* macros throughout the kernel). The nested for loops are
+  the correct implementation for matrix iteration.
+
+- DEVICE_ATTR_FUNCTIONS: Functions are correctly prefixed with driver
+  name (tm16xx_*) following standard kernel practice for device
+  attribute functions to avoid namespace conflicts.
