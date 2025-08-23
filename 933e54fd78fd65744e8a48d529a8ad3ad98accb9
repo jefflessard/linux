@@ -7,3 +7,13 @@ ignored:
 - DEVICE_ATTR_FUNCTIONS: Functions are correctly prefixed with driver
   name (tm16xx_*) following standard kernel practice for device
   attribute functions to avoid namespace conflicts.
+
+include <linux/of.h> is required for the default name of the main led
+device, excluding the unit address, as implemented in
+drivers/leds/led-core.c which relies on of_node->name
+
+LED registration uses non-devm variant on-purpose to allow explicit
+unregistration on device removal, ensuring LED triggers are
+immediately stopped. This prevents stale LED trigger activity from
+continuing after the hardware is gone, avoiding the need for complex
+state tracking in brightness callbacks.
