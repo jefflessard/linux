@@ -2,6 +2,8 @@ checkpatch reports false positives that are intentionally ignored:
 DEVICE_ATTR_FUNCTIONS: Functions are correctly prefixed with driver
 name (tm16xx_*) following standard kernel practice for device
 attribute functions to avoid namespace conflicts.
+BIT_MACRO: bit shifts are used for field values while GENMASK/BIT
+are used for bit positions per semantic convention
 
 include <linux/of.h> is required for the default name of the main led
 device, excluding the unit address, as implemented in
