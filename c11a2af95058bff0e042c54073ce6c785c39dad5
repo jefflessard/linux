@@ -1,3 +1,7 @@
 checkpatch reports false positives that are intentionally ignored:
 COMPLEX_MACRO, MACRO_ARG_REUSE, MACRO_ARG_PRECEDENCE
 This is a standard iterator pattern following kernel conventions.
+
+v2 changelog:
+- replace manual __free(fwnode_handle) of i2c-core-slave.c with
+  fwnode_for_each_child_node_scoped
