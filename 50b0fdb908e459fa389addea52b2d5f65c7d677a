@@ -1,1 +1,0 @@
-include <linux/of.h> is required for of_match_ptr
