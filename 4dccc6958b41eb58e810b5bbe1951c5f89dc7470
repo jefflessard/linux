@@ -1,3 +1,3 @@
 checkpatch reports false positives that are intentionally ignored:
-COMPLEX_MACRO, MACRO_ARG_REUSE, MACRO_ARG_PRECEDENCE
+MACRO_ARG_REUSE, MACRO_ARG_PRECEDENCE
 This is a standard iterator pattern following kernel conventions.
