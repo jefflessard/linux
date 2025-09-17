@@ -1,0 +1,7 @@
+The 'segments' property is intentionally not vendor-prefixed as it
+defines a generic hardware description concept applicable to any
+7-segment display controller. The property describes the fundamental
+grid/segment coordinate mapping that is controller-agnostic and could
+be reused by other LED matrix display bindings. Similar to how 'gpios'
+describes GPIO connections generically, 'segments' describes segment
+connections in a standardized way using uint32-matrix format.
