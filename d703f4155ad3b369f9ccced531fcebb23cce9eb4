@@ -1,0 +1,5 @@
+The attachment list operations are extremely lightweight (just
+adding/removing list entries), making spinlock the optimal choice because:
+- Very short critical sections: Only list traversal and pointer
+  assignments; avoids context switching overhead for brief operations
+- No sleeping: No memory allocation or I/O within locked sections
